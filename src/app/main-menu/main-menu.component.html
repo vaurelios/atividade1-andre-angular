@@ -1,0 +1,20 @@
+<nav class="col navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="index.html">MotoPeças</a>
+  <button class="navbar-toggler hidden-md-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isNavbarCollapsed">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active" *ngFor="let item of getLeftMenuItems()">
+        <a class="nav-link" *ngIf="!item.separator" routerLink="/{{item.page}}">{{item.title}}</a>
+        <span class="nav-link" *ngIf="item.separator">|</span>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" routerLinkActive="active" *ngFor="let item of getRightMenuItems()">
+        <a class="nav-link" *ngIf="!item.separator" routerLink="/{{item.page}}">{{item.title}}</a>
+        <span class="nav-link" *ngIf="item.separator">|</span>
+      </li>
+    </ul>
+  </div>
+</nav>

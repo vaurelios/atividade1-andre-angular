@@ -1,0 +1,10 @@
+<div class="row text-center py-3 bg-light">
+  <div class="col-sm-1 col-lg-3" *ngFor="let product of products">
+    <a class="d-block h-100" [routerLink]="['/product', product.cod]">
+      <img class="img-fluid img-thumbnail" src="assets/images/produtos/{{product.image_name}}">
+      <p class="my-1 mx-atuo"><small>Cod: {{product.cod}}</small></p>
+      <p class="my-1 mx-auto"><strong>{{product.name}}</strong></p>
+      <p class="my-1 mx-auto"><strong>R$ {{product.price | number: '1.2-2'}}</strong></p>
+    </a>
+  </div>
+</div>

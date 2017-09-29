@@ -1,0 +1,33 @@
+<div class="row bg-light my-3 p-3">
+  <div class="col">
+    <div class="row px-3">
+      <h3>Últimas ofertas</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-3" *ngFor="let oferta of ofertas">
+        <a class="d-block h-100 text-center" [routerLink]="['/product', oferta.cod]">
+          <img class="img-fluid img-thumbnail" src="assets/images/produtos/{{oferta.image_name}}">
+          <p class="my-1 mx-atuo"><small>Cod: {{oferta.cod}}</small></p>
+          <p class="my-1 mx-auto"><strong>{{oferta.name}}</strong></p>
+          <p class="my-1 mx-auto"><del><strong>R$ {{oferta.price | number: '1.2-2'}}</strong></del> | <strong>R$ {{((100 - oferta.promo) / 100) * oferta.price | number: '1.2-2'}}</strong></p>
+          <span class="bg-danger text-light p-1 offerLabel">{{oferta.promo}}% Off</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row bg-light my-3 px-3">
+  <div class="col">
+    <div class="row">
+      <h2 class="mx-auto">A Nossa empresta está localizada no seguinte endereço</h2>
+    </div>
+    <div class="row mt-3">
+      <address>
+        Estado da Paraíba, Campina Grande<br>
+        Bairo: Centro<br>
+        CEP: 12345-000<br>
+        Telefone: (83) 33xx-xxxx
+      </address>
+    </div>
+  </div>
+</div>
