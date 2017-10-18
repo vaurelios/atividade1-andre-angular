@@ -1,10 +1,10 @@
 export enum MenuItemAlign {
-  Left,
-  Right
+  Start,
+  End
 }
 
 export class MenuItem {
-  align?: MenuItemAlign = MenuItemAlign.Left;
+  align?: MenuItemAlign = MenuItemAlign.Start;
   separator?: boolean = false;
   page?: string;
   title?: string;
